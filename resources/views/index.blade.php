@@ -10,6 +10,7 @@
                       <div class="row">
 <!-- {{--                          <div class="col-xl-5 col-lg-7 col-md-8">--}} -->
                               <div class="hero__text">
+                                abc
                                   <h6>{{$image_banner->header}}</h6>
                                   <h2>{{$image_banner->title}}</h2>
                                   <p>{{$image_banner->content}}</p>
