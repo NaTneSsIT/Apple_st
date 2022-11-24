@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\BillManagerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
@@ -128,3 +129,52 @@ Route::get('/contacts',
     action : [ContactsController::class,'index'])->name('contacts');
 
 Route::get('/bill-details/pdf', [BillManagerController::class, 'createPDF'])->name('admin-export-bill');
+
+//Login
+
+Route::get('/login',
+    action : [LoginController::class,'getLogin']
+)->name('login');
+
+Route::get('/register',
+    action : [LoginController::class,'showRegister']
+);
+
+Route::post('/register',
+    action : [LoginController::class,'register']
+)->name('register');
+
+Route::post('/login',
+    action : [LoginController::class,'postLogin']
+)->name('postLogin');
+
+Route::get('/logout',
+    action : [LoginController::class,'getLogout'])->name('logout');
+
+
+//cart order controller
+Route::get('/checkout',
+    action : [CheckoutController::class,'index'])->name('checkout');
+
+Route::post('/order',
+    action : [CheckoutController::class,'addOrder'])->name('addOrder');
+
+
+
+//order list
+Route::get('/order',
+    action : [OrderController::class,'index'])->name('order-list');
+
+Route::get('/order-bill-detail',
+    action : [OrderController::class,'view'])->name('order-bill-detail');
+
+Route::get('/order-bill-destroy',
+    action : [OrderController::class,'destroy'])->name('order-bill-destroy');
+
+
+// user detail
+Route::get('/user-detail',
+    action : [\App\Http\Controllers\UserController::class,'index'])->name('user-detail');
+
+Route::get('/user-update',
+    action : [\App\Http\Controllers\UserController::class,'update'])->name('user-update');

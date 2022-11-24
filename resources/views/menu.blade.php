@@ -70,18 +70,18 @@
                 </nav>
             </div>
             <div class="col-lg-4 col-md-4">
-{{--                <div class="header__nav__option">--}}
-{{--                        @if (Illuminate\Support\Facades\Auth::check() === true)--}}
-{{--                            <a href="{{route("user-detail")}}">{{Auth::user()->fullname}}</a>--}}
-{{--                            <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i></a>--}}
-{{--                        @else--}}
-{{--                        <a href="{{asset('../login')}}">Đăng nhập</a>--}}
-{{--                        @endif--}}
-{{--                    <a href="#" class="search-switch"><img src="{{asset('img/icon/search.png')}}" alt=""></a>--}}
-{{--                    <a href="{{asset('/cart')}}"><img src="{{asset('img/icon/cart.png')}}" alt=""> <span>0</span></a>--}}
+                <div class="header__nav__option">
+                        @if (Illuminate\Support\Facades\Auth::check() === true)
+                            <a href="{{route("user-detail")}}">{{Auth::user()->fullname}}</a>
+                            <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i></a>
+                        @else
+                        <a href="{{asset('../login')}}">Đăng nhập</a>
+                        @endif
+                    <a href="#" class="search-switch"><img src="{{asset('img/icon/search.png')}}" alt=""></a>
+                    <a href="{{asset('/cart')}}"><img src="{{asset('img/icon/cart.png')}}" alt=""> <span>0</span></a>
 
-{{--                    <div id="div-price" class="price">{{'$'.$total}}</div>--}}
-{{--                </div>--}}
+                    <div id="div-price" class="price">{{'$'.$total}}</div>
+                </div>
             </div>
         </div>
         <div class="canvas__open"><i class="fas fa-bars"></i></div>
