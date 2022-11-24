@@ -2,13 +2,13 @@
 
     <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="product__item">
-        <a href="{{route('details',parameters:['id'=>$product->id])}}" >
+{{--        <a href="{{route('details',parameters:['id'=>$product->id])}}" >--}}
             <div  class="product__item__pic set-bg" data-setbg="{{$product->get_url_image()}}" >
                 <!-- <ul class="product__hover">
                     <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
                     <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
                     </li>
-                    <li><a href="{{route('details',parameters:['id'=>$product->id])}}"><img src="img/icon/search.png" alt=""></a></li>
+{{--                    <li><a href="{{route('details',parameters:['id'=>$product->id])}}"><img src="img/icon/search.png" alt=""></a></li>--}}
                 </ul> -->
             </div>
             </a>
