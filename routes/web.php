@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::get('/',
 )->name('home');
 Route::get('/shop',
     action : [ShopController::class,'index'])->name('shop');
+Route::get('/details',
+    action : [ProductDetailsController::class,'index'])->name('details');
