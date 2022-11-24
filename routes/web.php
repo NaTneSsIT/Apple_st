@@ -40,3 +40,10 @@ Route::get('/update-to-cart',
 Route::get('/remove_to_cart',
     action : [CartController::class,'remove_to_cart'])->name('remove_to_cart');
 
+
+//cart order controller
+Route::get('/checkout',
+    action : [CheckoutController::class,'index'])->name('checkout');
+
+Route::post('/order',
+    action : [CheckoutController::class,'addOrder'])->name('addOrder');
