@@ -56,32 +56,32 @@
                     <ul>
                         <li @if(Route::current()->getName() === 'home') class="active" @endif><a href="{{route('home')}}">Trang chủ</a></li>
                         <li @if(Route::current()->getName() === 'shop') class="active" @endif><a href="{{route('shop')}}">Sản phẩm</a></li>
-{{--                        <li @if(Route::current()->getName() === 'contacts') class="active" @endif><a href="{{route('contacts')}}">Liên lạc</a></li>--}}
+                        <li @if(Route::current()->getName() === 'contacts') class="active" @endif><a href="{{route('contacts')}}">Liên lạc</a></li>
                         <li><a href="#">Mua sắm</a>
-{{--                            <ul class="dropdown">--}}
-{{--                                <li><a href="{{route('cart')}}">Giỏ hàng</a></li>--}}
-{{--                                @if (Illuminate\Support\Facades\Auth::check() === true)--}}
-{{--                                <li><a href="{{route('order-list')}}">Xem đơn đặt hàng</a></li>--}}
-{{--                                @else--}}
-{{--                                @endif--}}
-{{--                            </ul>--}}
+                            <ul class="dropdown">
+                                <li><a href="{{route('cart')}}">Giỏ hàng</a></li>
+                                @if (Illuminate\Support\Facades\Auth::check() === true)
+                                <li><a href="{{route('order-list')}}">Xem đơn đặt hàng</a></li>
+                                @else
+                                @endif
+                            </ul>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-4 col-md-4">
-{{--                <div class="header__nav__option">--}}
-{{--                        @if (Illuminate\Support\Facades\Auth::check() === true)--}}
-{{--                            <a href="{{route("user-detail")}}">{{Auth::user()->fullname}}</a>--}}
-{{--                            <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i></a>--}}
-{{--                        @else--}}
-{{--                        <a href="{{asset('../login')}}">Đăng nhập</a>--}}
-{{--                        @endif--}}
-{{--                    <a href="#" class="search-switch"><img src="{{asset('img/icon/search.png')}}" alt=""></a>--}}
-{{--                    <a href="{{asset('/cart')}}"><img src="{{asset('img/icon/cart.png')}}" alt=""> <span>0</span></a>--}}
+                <div class="header__nav__option">
+                        @if (Illuminate\Support\Facades\Auth::check() === true)
+                            <a href="{{route("user-detail")}}">{{Auth::user()->fullname}}</a>
+                            <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i></a>
+                        @else
+                        <a href="{{asset('../login')}}">Đăng nhập</a>
+                        @endif
+                    <a href="#" class="search-switch"><img src="{{asset('img/icon/search.png')}}" alt=""></a>
+                    <a href="{{asset('/cart')}}"><img src="{{asset('img/icon/cart.png')}}" alt=""> <span>0</span></a>
 
-{{--                    <div id="div-price" class="price">{{'$'.$total}}</div>--}}
-{{--                </div>--}}
+                    <div id="div-price" class="price">{{'$'.$total}}</div>
+                </div>
             </div>
         </div>
         <div class="canvas__open"><i class="fas fa-bars"></i></div>
@@ -186,7 +186,7 @@
             let id = $(this).data('id_add_to_cart');
             let name = $(this).data('name_add_to_cart');
             $.ajax({
-                {{--url: "{{route('add_to_cart')}}",--}}
+                url: "{{route('add_to_cart')}}",
                 type: 'GET',
 
                 data: {id}
@@ -207,7 +207,7 @@
             let id = $(this).data('id');
             let type = $(this).data('type');
             $.ajax({
-                {{--url: "{{route('update_to_cart')}}",--}}
+                url: "{{route('update_to_cart')}}",
                 type: 'GET',
                 data: {id,type}
             }).done(function (data) {
@@ -250,7 +250,7 @@
             let btn_close = $(this);
             let id = $(this).data('id');
             $.ajax({
-                {{--url: "{{route('remove_to_cart')}}",--}}
+                url: "{{route('remove_to_cart')}}",
                 type: 'GET',
                 data: {id}
             }).done(function (data) {
