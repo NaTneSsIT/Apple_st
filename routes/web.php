@@ -47,3 +47,82 @@ Route::get('/checkout',
 
 Route::post('/order',
     action : [CheckoutController::class,'addOrder'])->name('addOrder');
+
+
+// admin
+
+Route::get('/admin',
+    action : [AdminController::class,'index'])->name('admin');
+
+Route::get('/admin-customer',
+    action : [AdminController::class,'customer'])->name('customer');
+
+Route::get('/logout-admin',
+    action : [LoginController::class,'getLogoutAdmin'])->name('logout-admin');
+
+
+
+// Category manager
+
+Route::get('/admin-category',
+    action : [CategoryManagerController::class,'index'])->name('admin-category');
+
+Route::get('/admin-category-create',
+    action : [CategoryManagerController::class,'create'])->name('admin-category-create');
+
+Route::post('/admin-category-store',
+    action : [CategoryManagerController::class,'store'])->name('admin-category-store');
+
+Route::get('/admin-category-delete',
+    action : [CategoryManagerController::class,'delete'])->name('admin-category-delete');
+
+Route::post('/admin-category-update',
+    action : [CategoryManagerController::class,'update'])->name('admin-category-update');
+
+Route::get('/admin-category-edit',
+    action : [CategoryManagerController::class,'edit'])->name('admin-category-edit');
+
+
+// Product manager
+
+Route::get('/admin-product',
+    action : [ProductManagerController::class,'index'])->name('admin-product');
+
+Route::get('/admin-product-create',
+    action : [ProductManagerController::class,'create'])->name('admin-product-create');
+
+Route::post('/admin-product-store',
+    action : [ProductManagerController::class,'store'])->name('admin-product-store');
+
+Route::get('/admin-product-delete',
+    action : [ProductManagerController::class,'delete'])->name('admin-product-delete');
+
+Route::get('/admin-product-update',
+    action : [ProductManagerController::class,'update'])->name('admin-product-update');
+
+Route::get('/admin-product-edit',
+    action : [ProductManagerController::class,'edit'])->name('admin-product-edit');
+
+//login admin
+Route::get('/log-admin',
+    action : [LoginController::class,'getLogAdmin'])->name('logAdmin');
+
+Route::post('/post-log-admin',
+    action : [LoginController::class,'postLogAdmin'])->name('postlogAdmin');
+
+// Bill
+Route::get('/admin-bill',
+    action : [BillManagerController::class,'index'])->name('admin-bill');
+Route::get('/admin-detail-bill',
+    action : [BillManagerController::class,'view'])->name('admin-detail-bill');
+
+Route::get('/admin-update-status-bill',
+    action : [BillManagerController::class,'update_status'])->name('admin-update-status-bill');
+
+Route::get('/details',
+    action : [ProductDetailsController::class,'index'])->name('details');
+
+Route::get('/contacts',
+    action : [ContactsController::class,'index'])->name('contacts');
+
+Route::get('/bill-details/pdf', [BillManagerController::class, 'createPDF'])->name('admin-export-bill');
