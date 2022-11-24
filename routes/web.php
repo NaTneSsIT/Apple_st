@@ -1,10 +1,15 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\BillManagerController;
+use App\Http\Controllers\admin\CategoryManagerController;
+use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
